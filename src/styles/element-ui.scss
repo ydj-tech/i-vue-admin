@@ -1,0 +1,131 @@
+// 统一修改element样式
+
+@import './variables.scss';
+.el-submenu__title, .el-menu-item-group__title {
+  width : 200px;
+}
+.el-menu-item-group__title {
+  padding : 0;
+}
+.el-submenu__title {
+  height : 40px;
+  line-height : 40px;
+  &:hover {
+    background-color : $menuHover !important;
+  }
+}
+.el-submenu .is-active {
+  background-color : $subMenuActiveBg !important;
+  //   border-right : 4px solid $activeRightBorderColor;
+}
+.submenu-title-noDropdown, .el-submenu__title {
+  height : 40px;
+  line-height : 40px;
+  &:hover {
+    background-color : $menuHover !important;
+  }
+}
+.el-menu-item, .el-submenu__title {
+  height : 40px;
+  line-height : 40px;
+  position : relative;
+  white-space : nowrap;
+  list-style : none;
+}
+.el-submenu.is-active.is-opened .el-submenu__title {
+  color : #FFFFFF !important;
+}
+.el-submenu__title i {
+  color : #A5C0E7;
+}
+.el-submenu.is-active.is-opened .el-submenu__title i {
+  color : #FFFFFF;
+}
+.el-submenu .el-menu-item {
+  height : 40px;
+  line-height : 40px;
+  padding : 0 45px;
+  min-width : 200px;
+}
+.submenu-title-noDropdown {
+  width : 210px !important;
+}
+
+.el-dropdown-link {
+  cursor : pointer;
+  color : #FFFFFF;
+}
+.el-icon-arrow-down {
+  font-size : 12px;
+}
+
+//只有一级菜单的选中效果
+.router-link-exact-active.router-link-active.submenu-title-noDropdown li {
+  background-color : $subMenuActiveBg !important;
+  // border-right: 4px solid $activeRightBorderColor;
+  color : $activeFontColor !important;
+}
+.router-link-exact-active.router-link-active .submenu-title-noDropdown {
+  background-color : $subMenuActiveBg !important;
+  color : $activeFontColor !important;
+}
+
+//覆盖collapse的默认样式
+.el-collapse-item__header {
+  box-sizing : border-box;
+  width : 70px;
+  height : 30px;
+  text-align : left;
+  position : absolute ;
+  border : 1px solid #FFFFFF;
+  right : 10px;
+  bottom : 20px;
+  z-index : 2;
+}
+.el-collapse-item__header:hover {
+  border : 1px solid #008CFF;
+}
+.el-collapse-item__header::after {
+  content : '更多';
+  color : #008CFF;
+  padding-right : 10px;
+}
+.el-collapse-item__arrow:after {
+  display : none;
+}
+.el-icon-arrow-right:before {
+  margin-top : 10px;
+  color : #008CFF;
+}
+
+.el-collapse-item__wrap {
+  border-bottom : none;
+}
+
+element.style {
+  padding-bottom : 0px;
+}
+.el-collapse-item__content {
+  padding-bottom : 0px;
+}
+
+//覆盖el元素框的大小
+.el-form-item .el-form-item__content .el-input, .el-form-item.el-form-item--small .el-form-item__content .el-input.el-input--small {
+  width : 90%;
+}
+.el-form-item.el-form-item--small .el-form-item__content .el-select.el-select--small, .el-form-item .el-form-item__content .el-select {
+  width : 100%;
+}
+.el-cascader.el-cascader--small {
+  width : 90%;
+}
+.el-date-editor.el-range-editor.el-input__inner.el-date-editor--datetimerange.el-range-editor--small {
+  width : 90%;
+}
+.el-button--small, .el-button--small.is-round {
+  padding : 9px 25px;
+}   
+// 分页器
+.el-pagination {
+  text-align : right;
+}
