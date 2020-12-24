@@ -24,7 +24,7 @@ module.exports = {
                 }
             },
             '/api': {
-                target: 'https://sensorapi.aiyunbao.net',
+                target: 'https://api.isensor.aiyunbao.net',
                 changeOrigin: true,
                 pathRewrite: {
                     '^/api': '/'
