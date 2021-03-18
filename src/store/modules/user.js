@@ -1,6 +1,5 @@
 import { setToken, getToken, removeToken } from '@/utils/auth'
 import { login } from '@/api/login/index'
-import { longStackSupport } from 'q';
 
 const user = {
     state: {
@@ -17,7 +16,7 @@ const user = {
     },
     actions: {
         Login({ commit }, userInfo) {
-            const { username, password } = userInfo;
+            const { username, password } = userInfo
             return new Promise(async (resolve, reject) => {
                 try {
                     const response = await login({ username, password })
@@ -41,10 +40,4 @@ const user = {
     }
 }
 
-
-
-
-
-
-
-export default user;
+export default user

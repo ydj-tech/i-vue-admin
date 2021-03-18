@@ -59,109 +59,135 @@ const routes = [
     //     ]
     // },
     // 诊断管理
+    // {
+    //     path: '/diagnose',
+    //     component: Layout,
+    //     name: 'Diagnose',
+    //     meta: {
+    //         title: '诊断管理',
+    //         icon: 'example'
+    //     },
+    //     children: [
+    //         {
+    //             path: 'dtc/list',
+    //             component: () => import('@/views/diagnose/dtc/list'),
+    //             name: 'DtcList',
+    //             meta: { title: '故障码列表', icon: 'list' }
+    //         },
+    //         {
+    //             path: 'dtc/create',
+    //             component: () => import('@/views/diagnose/dtc/edit'),
+    //             name: 'DtcCreate',
+    //             hidden: true,
+    //             meta: { title: '创建故障码', icon: 'edit' }
+    //         },
+    //         {
+    //             path: 'dtc/edit/:sn',
+    //             component: () => import('@/views/diagnose/dtc/edit'),
+    //             name: 'DtcEdit',
+    //             hidden: true,
+    //             meta: { title: '编辑故障码', icon: 'edit' }
+    //         },
+    //         {
+    //             path: 'cds/list',
+    //             component: () => import('@/views/diagnose/cds/list'),
+    //             name: 'CdsList',
+    //             meta: { title: '数据流列表', icon: 'list' }
+    //         },
+    //         {
+    //             path: 'cds/create',
+    //             component: () => import('@/views/diagnose/cds/edit'),
+    //             name: 'CdsCreate',
+    //             hidden: true,
+    //             meta: { title: '创建数据流', icon: 'edit' }
+    //         },
+    //         {
+    //             path: 'cds/edit/:sn',
+    //             component: () => import('@/views/diagnose/cds/edit'),
+    //             name: 'CdsEdit',
+    //             hidden: true,
+    //             meta: { title: '编辑数据流', icon: 'edit' }
+    //         },
+    //         {
+    //             path: 'device/list',
+    //             component: () => import('@/views/diagnose/device/list'),
+    //             name: 'DeviceList',
+    //             meta: { title: '设备列表', icon: 'list' }
+    //         },
+    //         {
+    //             path: 'device/create',
+    //             component: () => import('@/views/diagnose/device/edit'),
+    //             name: 'DeviceCreate',
+    //             hidden: true,
+    //             meta: { title: '创建设备', icon: 'edit' }
+    //         },
+    //         {
+    //             path: 'device/edit/:sn',
+    //             component: () => import('@/views/diagnose/device/edit'),
+    //             name: 'DeviceEdit',
+    //             hidden: true,
+    //             meta: { title: '编辑设备', icon: 'edit' }
+    //         },
+    //         {
+    //             path: 'cuslog/list',
+    //             component: () => import('@/views/diagnose/cuslog/list'),
+    //             name: 'LogList',
+    //             meta: { title: '日志列表', icon: 'list' }
+    //         },
+    //         {
+    //             path: 'cuslog/create',
+    //             component: () => import('@/views/diagnose/cuslog/edit'),
+    //             name: 'LogCreate',
+    //             hidden: true,
+    //             meta: { title: '创建日志', icon: 'edit' }
+    //         },
+    //         {
+    //             path: 'cuslog/edit/:sn',
+    //             component: () => import('@/views/diagnose/cuslog/edit'),
+    //             name: 'LogEdit',
+    //             hidden: true,
+    //             meta: { title: '编辑日志', icon: 'edit' }
+    //         },
+    //         {
+    //             path: 'user/list',
+    //             component: () => import('@/views/diagnose/user/list'),
+    //             name: 'UserList',
+    //             meta: { title: '会员列表', icon: 'list' }
+    //         },
+    //         {
+    //             path: 'record/list',
+    //             component: () => import('@/views/diagnose/record/list'),
+    //             name: 'RecordList',
+    //             meta: { title: '记录列表', icon: 'list' }
+    //         }
+    //     ]
+    // }
+    // 系统管理
     {
-        path: '/diagnose',
+        path: '/system',
+        name: 'System',
         component: Layout,
-        name: 'Diagnose',
         meta: {
-            title: '诊断管理',
+            title: '系统管理',
             icon: 'example'
         },
         children: [
             {
-                path: 'dtc/list',
-                component: () => import('@/views/diagnose/dtc/list'),
-                name: 'DtcList',
-                meta: { title: '故障码列表', icon: 'list' }
-            },
-            {
-                path: 'dtc/create',
-                component: () => import('@/views/diagnose/dtc/edit'),
-                name: 'DtcCreate',
-                hidden: true,
-                meta: { title: '创建故障码', icon: 'edit' }
-            },
-            {
-                path: 'dtc/edit/:sn',
-                component: () => import('@/views/diagnose/dtc/edit'),
-                name: 'DtcEdit',
-                hidden: true,
-                meta: { title: '编辑故障码', icon: 'edit' }
-            },
-            {
-                path: 'cds/list',
-                component: () => import('@/views/diagnose/cds/list'),
-                name: 'CdsList',
-                meta: { title: '数据流列表', icon: 'list' }
-            },
-            {
-                path: 'cds/create',
-                component: () => import('@/views/diagnose/cds/edit'),
-                name: 'CdsCreate',
-                hidden: true,
-                meta: { title: '创建数据流', icon: 'edit' }
-            },
-            {
-                path: 'cds/edit/:sn',
-                component: () => import('@/views/diagnose/cds/edit'),
-                name: 'CdsEdit',
-                hidden: true,
-                meta: { title: '编辑数据流', icon: 'edit' }
-            },
-            {
-                path: 'device/list',
-                component: () => import('@/views/diagnose/device/list'),
-                name: 'DeviceList',
-                meta: { title: '设备列表', icon: 'list' }
-            },
-            {
-                path: 'device/create',
-                component: () => import('@/views/diagnose/device/edit'),
-                name: 'DeviceCreate',
-                hidden: true,
-                meta: { title: '创建设备', icon: 'edit' }
-            },
-            {
-                path: 'device/edit/:sn',
-                component: () => import('@/views/diagnose/device/edit'),
-                name: 'DeviceEdit',
-                hidden: true,
-                meta: { title: '编辑设备', icon: 'edit' }
-            },
-            {
-                path: 'cuslog/list',
-                component: () => import('@/views/diagnose/cuslog/list'),
-                name: 'LogList',
-                meta: { title: '日志列表', icon: 'list' }
-            },
-            {
-                path: 'cuslog/create',
-                component: () => import('@/views/diagnose/cuslog/edit'),
-                name: 'LogCreate',
-                hidden: true,
-                meta: { title: '创建日志', icon: 'edit' }
-            },
-            {
-                path: 'cuslog/edit/:sn',
-                component: () => import('@/views/diagnose/cuslog/edit'),
-                name: 'LogEdit',
-                hidden: true,
-                meta: { title: '编辑日志', icon: 'edit' }
-            },
-            {
-                path: 'user/list',
-                component: () => import('@/views/diagnose/user/list'),
-                name: 'UserList',
-                meta: { title: '会员列表', icon: 'list' }
-            },
-            {
-                path: 'record/list',
-                component: () => import('@/views/diagnose/record/list'),
-                name: 'RecordList',
-                meta: { title: '记录列表', icon: 'list' }
+                path: 'role',
+                name: '角色管理',
+                component: () => import('@/views/system/role'),
+                meta: { title: '角色管理', icon: 'list' }
             }
         ]
     }
+    // 编码管理
+    // 文件类型管理
+    // 流程管理
+    // 组织机构管理
+    // 系统用户管理
+    // 系统日志
+    // 功能管理
+    // 节假日管理
 ]
 
 const router = new VueRouter({

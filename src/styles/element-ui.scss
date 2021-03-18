@@ -129,3 +129,6 @@ element.style {
 .el-pagination {
   text-align : right;
 }
+.el-tabs .el-tabs--top .el-tabs--border-card {
+  min-height: calc(100vh-134px);
+}

@@ -5,7 +5,7 @@
       class="logo"
       src="../../assets/logo.png"
     /> -->
-    <span class="title">车联网管控平台</span>
+    <span class="title">保健食品注册管理系统</span>
 
     <div class="right-menu">
       <el-badge
@@ -54,7 +54,7 @@ export default {
         }
     },
     mounted() {
-        this.username = this.$store.getters.username || "yb_admin"
+        this.username = this.$store.getters.username || 'yb_admin'
     },
     computed: {},
     created() {
@@ -70,7 +70,7 @@ export default {
         },
         logout() {
             this.$store.dispatch('LogOut').then((res) => {
-              console.log('成功登出')
+                console.log('成功登出')
                 this.$router.replace({ path: '/login' })
             }).catch((res) => {
             })

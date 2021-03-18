@@ -11,7 +11,7 @@
         label-width="150px"
         class="card-box login-form"
       >
-        <h3 class="title">车联网管控平台</h3>
+        <h3 class="title">保健食品注册管理系统</h3>
         <el-form-item prop="username" label="用户名">
           <el-input
             name="username"
@@ -68,96 +68,98 @@
       </el-form>
       <div class="login-right"></div>
     </div>
-    <div class="footer">Power by 云宝科技©2020 </div>
+    <div class="footer">Power by 国家市场监督管理总局©2020 </div>
   </div>
 </template>
 
 <script>
-import PictureCode from "@/components/PictureCode";
+import PictureCode from '@/components/PictureCode'
 export default {
-  name: "login",
-  components: {
-    PictureCode
-  },
-  data() {
-    var validatePictureCode = (rule, value, callback) => {
-      if (!value) {
-        callback(new Error("请输入图片码"));
-      } else if (value.toLowerCase() !== this.pictureCode) {
-        callback(new Error("图片码不正确"));
-      } else {
-        this.isValidatePass = true;
-        callback();
-      }
-    };
-    return {
-      loginForm: {
-        username: ""
-      },
-      loginRules: {
-        username: [
-          { required: true, message: "请输入用户名", trigger: "blur" }
-        ],
-        password: [{ required: true, message: "请输入密码", trigger: "blur" }],
-        validateCode: [
-          {
-            required: true,
-            message: "请输入图片码",
-            trigger: "blur"
-          },
-          { validator: validatePictureCode, trigger: "blur" }
-        ]
-      },
-      loading: false,
-      codeHeight: 40,
-      pictureCode: "", // 生成的图片码
-      isValidatePass: false
-    };
-  },
-  methods: {
+    name: 'login',
+    components: {
+        PictureCode
+    },
+    data() {
+        var validatePictureCode = (rule, value, callback) => {
+            if (!value) {
+                callback(new Error('请输入图片码'))
+            } else if (value.toLowerCase() !== this.pictureCode) {
+                callback(new Error('图片码不正确'))
+            } else {
+                this.isValidatePass = true
+                callback()
+            }
+        }
+        return {
+            loginForm: {
+                username: ''
+            },
+            loginRules: {
+                username: [
+                    { required: true, message: '请输入用户名', trigger: 'blur' }
+                ],
+                password: [{ required: true, message: '请输入密码', trigger: 'blur' }],
+                validateCode: [
+                    {
+                        required: true,
+                        message: '请输入图片码',
+                        trigger: 'blur'
+                    },
+                    { validator: validatePictureCode, trigger: 'blur' }
+                ]
+            },
+            loading: false,
+            codeHeight: 40,
+            pictureCode: '', // 生成的图片码
+            isValidatePass: false
+        }
+    },
+    methods: {
     // 验证码
-    getValidateCode(val) {
-      this.pictureCode = val;
-    },
-    // 登录方法
-    handleLogin() {
-      this.$refs.loginForm.validate(valid => {
-        if (valid) {
-          this.loading = true;
-          this.$store
-            .dispatch("Login", this.loginForm)
-            .then(res => {
-              // 登录后，跳转到首页
-              console.log("登陆成功");
-              this.$router.push({ path: "/" });
+        getValidateCode(val) {
+            this.pictureCode = val
+        },
+        // 登录方法
+        handleLogin() {
+            console.log('登录成功')
+            this.$router.push({ path: '/' })
+            // this.$refs.loginForm.validate(valid => {
+            //     if (valid) {
+            //         this.loading = true
+            //         this.$store
+            //             .dispatch('Login', this.loginForm)
+            //             .then(res => {
+            //                 // 登录后，跳转到首页
+            //                 console.log('登陆成功')
+            //                 this.$router.push({ path: '/' })
+            //             })
+            //             .catch(res => {
+            //                 this.loading = false
+            //                 this.$message.error(res)
+            //                 this.$refs.validateCode.drawCode('')
+            //                 this.loginForm.validateCode = ''
+            //                 this.isValidatePass = false
+            //             })
+            //     } else {
+            //         console.log('error submit!!')
+            //         return false
+            //     }
+            // })
+        },
+        regist() {
+            this.$router.push({ path: '/regist' })
+        },
+        checkPictureCode() {
+            this.$refs.loginForm.validateField('validateCode', res => {
+                if (!res) {
+                    this.isValidatePass = true
+                } else {
+                    this.isValidatePass = false
+                }
             })
-            .catch(res => {
-              this.loading = false;
-              this.$message.error(res);
-              this.$refs.validateCode.drawCode("");
-              this.loginForm.validateCode = "";
-              this.isValidatePass = false;
-            });
-        } else {
-          console.log("error submit!!");
-          return false;
         }
-      });
-    },
-    regist() {
-      this.$router.push({ path: "/regist" });
-    },
-    checkPictureCode() {
-      this.$refs.loginForm.validateField("validateCode", res => {
-        if (!res) {
-          this.isValidatePass = true;
-        } else {
-          this.isValidatePass = false;
-        }
-      });
     }
-  }
-};
+}
 </script>
 
 <style rel="stylesheet/less" lang="scss">
@@ -282,4 +284,3 @@ $title_black: #333333;
 }
 
 </style>
-

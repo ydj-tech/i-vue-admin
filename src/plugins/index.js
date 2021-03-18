@@ -1,7 +1,7 @@
-import CusButton from "./index.vue"
+import CusButton from './index.vue'
 
 export default {
     install: (Vue) => {
-        Vue.component("cus-button",CusButton)
+        Vue.component('cus-button', CusButton)
     }
 }
